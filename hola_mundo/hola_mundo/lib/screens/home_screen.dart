@@ -19,9 +19,8 @@ class HomeScreen extends StatelessWidget {
         padding: const EdgeInsets.all(10.0),
         child: FloatingActionButton(
           elevation: 30,
-          child: Icon(Icons.add),
+          child: const Icon(Icons.add),
           onPressed: () {
-            print('hola mundo');
             counter++;
           },
         ),
