@@ -1,18 +1,35 @@
+import 'package:componentes/screens/list_view.dart';
 import 'package:flutter/material.dart';
 
-class HomeScreen extends StatefulWidget {
-  const HomeScreen({super.key});
+class HomeScreen extends StatelessWidget {
+  const HomeScreen({Key? key}) : super(key: key);
 
-  @override
-  State<HomeScreen> createState() => _HomeScreenState();
-}
-
-class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Componentes'), backgroundColor: Colors.amber),
-      body: Text("aaaa"),
+      appBar: AppBar(
+        title: const Text('Componentes en Flutter'),
+        elevation: 0,
+      ),
+      body: ListView.separated(
+          itemBuilder: (context, index) {
+            return ListTile(
+              title: Text('Ruta'),
+              leading: Icon(Icons.accessibility_new),
+              onTap: () 
+              {
+                  final route = MaterialPageRoute(builder: (context) 
+                  {
+                    return ListViewScreen();
+                  },);
+                  Navigator.push(context, route)
+              },
+            );
+          },
+          separatorBuilder: (context, index) {
+            return Divider();
+          },
+          itemCount: 10),
     );
   }
 }
