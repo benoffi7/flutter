@@ -1,3 +1,5 @@
+import 'package:componentes/router/app_routes.dart';
+import 'package:componentes/theme/app_theme.dart';
 import 'package:flutter/material.dart';
 
 import 'screens/screens.dart';
@@ -12,25 +14,20 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      theme: AppTheme.lightTheme,
+      darkTheme: AppTheme.darkTheme,
+      themeMode: ThemeMode.system,
+      /* ThemeMode.system to follow system theme, 
+         ThemeMode.light for light theme, 
+         ThemeMode.dark for dark theme
+      */
       debugShowCheckedModeBanner: false,
-      //home: const CardScreen(),
-      initialRoute: 'home',
-      routes: {
-        'home': (BuildContext context) {
-          return const HomeScreen();
-        },
-        'listview1': (BuildContext context) {
-          return const ListViewScreen();
-        },
-        'listview2': (BuildContext context) {
-          return const ListViewScreen2();
-        },
-        'alert': (BuildContext context) {
-          return const AlertScreen();
-        },
-        'card': (BuildContext context) {
-          return const CardScreen();
-        }
+      initialRoute: AppRoutes.initialRoute,
+      routes: AppRoutes.getAppRoutes(), //tipo manifest para declarar todo
+      //onGenerateRoute: AppRoutes.onGenerateRoute , //cuando hay un solo argumento le podes pasar la funcion
+      //cuando no encuentra una ruta tira esta
+      onGenerateRoute: (settings) {
+        return AppRoutes.onGenerateRoute(settings);
       },
     );
   }
