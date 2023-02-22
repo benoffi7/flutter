@@ -6,8 +6,13 @@ class AppTheme {
   static final ThemeData lightTheme = ThemeData.light().copyWith(
       primaryColor: primary,
       brightness: Brightness.light,
+      elevatedButtonTheme: ElevatedButtonThemeData(
+          style: ElevatedButton.styleFrom(
+              primary: primary, shape: BeveledRectangleBorder())),
       textButtonTheme: TextButtonThemeData(
-          style: TextButton.styleFrom(foregroundColor: primary)),
+          style: TextButton.styleFrom(backgroundColor: primary)),
+      floatingActionButtonTheme: const FloatingActionButtonThemeData(
+          backgroundColor: primary, elevation: 5),
       appBarTheme: const AppBarTheme(color: primary, elevation: 0));
 
   static final ThemeData darkTheme = ThemeData.dark().copyWith(
