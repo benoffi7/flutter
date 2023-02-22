@@ -12,10 +12,10 @@ class AppTheme {
 
   static final ThemeData darkTheme = ThemeData.dark().copyWith(
       primaryColor: primary,
-      appBarTheme: AppBarTheme(color: primary, elevation: 0),
+      appBarTheme: const AppBarTheme(color: primary, elevation: 0),
       scaffoldBackgroundColor: Colors.black);
 
- /*
+  /*
   static final ButtonStyle textButtomTheme =
       TextButton.styleFrom(foregroundColor: primary);
       */

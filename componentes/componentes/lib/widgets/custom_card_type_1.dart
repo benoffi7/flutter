@@ -3,20 +3,19 @@ import 'package:flutter/material.dart';
 import '../theme/app_theme.dart';
 
 class CustomCardType1 extends StatelessWidget {
-  const CustomCardType1({
-    super.key,
-  });
+  final String text;
+
+  const CustomCardType1({super.key, required this.text});
 
   @override
   Widget build(BuildContext context) {
     return Card(
       child: Column(children: [
         ListTile(
-          subtitle: Text(
-              'Minim exercitation dolore eiusmod aliqua ullamco laborum non ad velit minim.'),
-          leading: Icon(Icons.photo_album),
+          subtitle: Text(text),
+          leading: const Icon(Icons.photo_album),
           iconColor: AppTheme.primary,
-          title: Text('Soy un titulo'),
+          title: const Text('Soy un titulo'),
         ),
         Padding(
           padding: const EdgeInsets.only(right: 8),
