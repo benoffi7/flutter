@@ -44,6 +44,11 @@ class AppRoutes {
         route: 'animated',
         screen: AnimatedScreen(),
         icon: Icons.animation),
+    MenuOption(
+        name: 'Formulario',
+        route: 'form',
+        screen: InputScreen(),
+        icon: Icons.input)
   ];
 
   //esto es para el main
