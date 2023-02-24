@@ -10,7 +10,7 @@ class AppTheme {
           style: ElevatedButton.styleFrom(
               primary: primary, shape: BeveledRectangleBorder())),
       textButtonTheme: TextButtonThemeData(
-          style: TextButton.styleFrom(backgroundColor: primary)),
+          /* style: TextButton.styleFrom(backgroundColor: primary)*/),
       floatingActionButtonTheme: const FloatingActionButtonThemeData(
           backgroundColor: primary, elevation: 5),
       appBarTheme: const AppBarTheme(color: primary, elevation: 0));

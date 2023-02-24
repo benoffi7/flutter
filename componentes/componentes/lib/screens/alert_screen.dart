@@ -1,9 +1,31 @@
+import 'dart:io';
+
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class AlertScreen extends StatelessWidget {
   const AlertScreen({Key? key}) : super(key: key);
 
-  void displayDialog(BuildContext buildContext) {
+  void displayiOSDialog(BuildContext buildContext) {
+    showCupertinoDialog(
+      barrierDismissible: true,
+      context: buildContext,
+      builder: (context) {
+        return CupertinoAlertDialog(
+          title: Text('hola'),
+          actions: [
+            TextButton(onPressed: () {}, child: Text('ok')),
+            TextButton(
+              onPressed: () {},
+              child: Text('cancelar'),
+            )
+          ],
+        );
+      },
+    );
+  }
+
+  void displayAndroidDialog(BuildContext buildContext) {
     showDialog(
         barrierDismissible: false,
         context: buildContext,
@@ -52,7 +74,11 @@ class AlertScreen extends StatelessWidget {
       body: Center(
         child: ElevatedButton(
           onPressed: () {
-            displayDialog(context);
+            if (Platform.isAndroid) {
+              displayAndroidDialog(context);
+            } else {
+              displayiOSDialog(context);
+            }
           },
           child: Padding(
             padding: const EdgeInsets.all(20.0),
