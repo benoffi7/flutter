@@ -32,6 +32,11 @@ class AppRoutes {
         route: 'card',
         screen: CardScreen(),
         icon: Icons.credit_card),
+    MenuOption(
+        name: 'Circle Avatar',
+        route: 'circle',
+        screen: CircleScreen(),
+        icon: Icons.circle),
   ];
 
   //esto es para el main
