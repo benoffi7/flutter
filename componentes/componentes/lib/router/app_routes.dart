@@ -7,11 +7,13 @@ class AppRoutes {
   static const initialRoute = 'home';
 
   static final menuOptions = <MenuOption>[
+    /*
     MenuOption(
         name: 'Inicio',
         route: 'home',
         screen: HomeScreen(),
         icon: Icons.holiday_village_sharp),
+        */
     MenuOption(
         name: 'Lista 1',
         route: 'listview1',
@@ -37,11 +39,19 @@ class AppRoutes {
         route: 'circle',
         screen: CircleScreen(),
         icon: Icons.circle),
+    MenuOption(
+        name: 'Animación',
+        route: 'animated',
+        screen: AnimatedScreen(),
+        icon: Icons.animation),
   ];
 
   //esto es para el main
   static Map<String, Widget Function(BuildContext)> getAppRoutes() {
     Map<String, Widget Function(BuildContext)> appRoutes = {};
+
+    appRoutes.addAll({'home': (BuildContext context) => HomeScreen()});
+
     for (final option in menuOptions) {
       appRoutes.addAll({option.route: (BuildContext context) => option.screen});
     }
